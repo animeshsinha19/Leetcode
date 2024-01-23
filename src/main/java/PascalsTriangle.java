@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class PascalsTriangle {
     public List<List<Integer>> generate(int numRows) {
@@ -26,7 +25,6 @@ public class PascalsTriangle {
             }
             nums[row] = currentRow;
         }
-
         return convert(nums);
     }
 
@@ -42,6 +40,13 @@ public class PascalsTriangle {
         return matrix;
     }
 
+    private List<List<Integer>> convertUsingIntStream(int[][] nums) {
+        List<List<Integer>> matrix = new ArrayList<>();
+        for (int[] numArr : nums) {
+            matrix.add(Arrays.stream(numArr).boxed().toList());
+        }
+        return matrix;
+    }
 
     public static void main(String[] args) {
         PascalsTriangle pascalsTriangle = new PascalsTriangle();
