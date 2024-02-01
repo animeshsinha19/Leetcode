@@ -1,3 +1,5 @@
+package arrays_1;
+
 public class SetMatrixZero {
     public void setZeroes(int[][] matrix) {
         boolean isFirstRowZero = false;

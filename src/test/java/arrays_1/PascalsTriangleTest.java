@@ -1,3 +1,6 @@
+package arrays_1;
+
+import arrays_1.PascalsTriangle;
 import org.testng.annotations.Test;
 
 import java.util.List;

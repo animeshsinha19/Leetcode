@@ -1,15 +1,6 @@
-public class MaxProfit {
-    public int maxProfit(int[] prices) {
-        if (prices.length == 1) {
-            return 0;
-        }
-        int[] diff = new int[prices.length - 1];
-        for (int i = 1, j = 0; i < prices.length; i++, j++) {
-            diff[j] = (prices[i] - prices[i - 1]);
-        }
-        return Math.max(maxSubArray(diff), 0);
-    }
+package arrays_1;
 
+public class MaximumSubarray {
     public int maxSubArray(int[] nums) {
         return findMaximumSubarray(nums, 0, nums.length - 1)[2];
     }
@@ -59,22 +50,10 @@ public class MaxProfit {
         }
     }
 
-    public int maxProfitSimpleNSquared(int[] prices) {
-        int profit = 0;
-        for (int i = 0; i < prices.length; i++) {
-            for (int j = i + 1; j < prices.length; j++) {
-                if (prices[j] - prices[i] > profit) {
-                    profit = prices[j] - prices[i];
-                }
-            }
-        }
-        return profit;
-    }
-
     public static void main(String[] args) {
-        MaxProfit maxProfit = new MaxProfit();
-        int[] nums = new int[] {7,1,5,3,6,4};
-        int profit = maxProfit.maxProfit(nums);
-        System.out.println(profit);
+        int[] nums = new int[] {-2,1,-3,4,-1,2,1,-5,4};
+        MaximumSubarray maximumSubarray = new MaximumSubarray();
+        int sum = maximumSubarray.maxSubArray(nums);
+        System.out.println(sum);
     }
 }

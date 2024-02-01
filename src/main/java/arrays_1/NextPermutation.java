@@ -1,5 +1,6 @@
+package arrays_1;
+
 import java.util.Arrays;
-import java.util.Collections;
 
 public class NextPermutation {
     public void nextPermutation(int[] nums) {

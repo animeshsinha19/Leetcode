@@ -1,3 +1,6 @@
+package arrays_1;
+
+import arrays_1.MaxProfit;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
