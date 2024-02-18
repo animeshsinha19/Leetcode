@@ -20,7 +20,7 @@ public class MergeSort {
     private int[] copyArrayElems(int[] nums, int p, int q, int len) {
         int[] newArr = new int[len];
         int j = 0;
-        for (int i = p; i <= q; i++) {
+        for (int i = p; i <= q; i++) { // IMP: need to copy src array from p to q into new array starting from 0
             newArr[j] = nums[i];
             j++;
         }
@@ -35,7 +35,9 @@ public class MergeSort {
         int[] rightArr = copyArrayElems(nums, q + 1, r, n2);
 
         int i, j = 0, k = 0;
-        for (i = p; j < n1 && k < n2; i++) {
+        for (i = p; j < n1 && k < n2; i++) { // IMP: need to start copying into src array from p index, and
+                                             //      loop until both j and k are less than n1 and n2, to ensure, valid
+                                             //      termination logic.
             if (leftArr[j] <= rightArr[k]) {
                 nums[i] = leftArr[j];
                 j++;
